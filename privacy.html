@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Політика конфіденційності — Лекція → три документи</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+         font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  h1 { font-size: 1.5rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.1rem; margin-top: 2rem; }
+  .lead { color: #666; margin-top: 0; }
+  ul { padding-left: 1.2rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #ccc; padding: .5rem .6rem; text-align: left; vertical-align: top; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #666; }
+  a { color: #0a58ca; }
+  @media (prefers-color-scheme: dark) {
+    .lead, footer { color: #9aa0a6; } a { color: #8ab4f8; } th, td { border-color: #444; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Політика конфіденційності</h1>
+<p class="lead">Застосунок «Лекція → три документи» (lecture-bot). Чинна з 10 вересня 2026 року.</p>
+
+<p>
+Застосунок є приватним навчальним інструментом. Ним користуються автор і кілька одногрупників
+за списком дозволених облікових записів Telegram. Публічної реєстрації немає, дані не
+продаються і не передаються рекламним мережам.
+</p>
+
+<h2>Які дані обробляються</h2>
+<table>
+  <tr><th>Дані</th><th>Навіщо</th></tr>
+  <tr><td>Ідентифікатор та ім'я користувача в Telegram</td><td>перевірити, що доступ дозволено, і надіслати відповідь</td></tr>
+  <tr><td>Аудіозаписи лекцій, фотографії слайдів, файли лекцій і методичок</td><td>розпізнати мовлення та сформувати навчальні документи</td></tr>
+  <tr><td>Назви предметів і тем, які вводить користувач</td><td>упорядкувати документи за предметами</td></tr>
+  <tr><td>Адреса електронної пошти Google</td><td>створювати документи на Диску користувача</td></tr>
+</table>
+
+<h2>Доступ до Google Диска</h2>
+<p>
+Застосунок запитує єдиний дозвіл
+<code>https://www.googleapis.com/auth/drive.file</code>.
+</p>
+<ul>
+  <li>Дозвіл дає доступ лише до файлів і папок, які створив сам застосунок.</li>
+  <li>Застосунок не бачить і не може прочитати інші файли на Диску користувача.</li>
+  <li>Він створює папку предмета, папку лекції, документи з результатами обробки та покажчик лекцій, а також оновлює ці документи при перегенерації.</li>
+  <li>Застосунок не видаляє файли користувача.</li>
+</ul>
+<p>
+Дані, отримані через Google Диск, використовуються тільки для створення й оновлення цих
+документів. Вони не передаються третім особам, не використовуються для реклами і не
+застосовуються для навчання моделей штучного інтелекту.
+</p>
+
+<h2>Де зберігаються дані</h2>
+<ul>
+  <li>Створені документи зберігаються на Google Диску користувача, у папці «Лекції».</li>
+  <li>Транскрипти, службові записи про лекції та тимчасові файли зберігаються на приватному сервері автора. Доступ до сервера лише за ключем SSH.</li>
+  <li>Резервні копії службової бази зберігаються на тому самому сервері, чотирнадцять останніх.</li>
+</ul>
+
+<h2>Передача даних постачальникам обробки</h2>
+<p>
+Щоб розпізнати мовлення та підготувати документи, зміст лекції передається постачальникам
+відповідних послуг:
+</p>
+<ul>
+  <li>Google (Gemini API) — розпізнавання мовлення, читання фотографій слайдів, підготовка текстів;</li>
+  <li>Anthropic (Claude API) — підготовка конспекту;</li>
+  <li>DeepInfra та Groq — запасне розпізнавання мовлення, якщо основне недоступне.</li>
+</ul>
+<p>
+Передається зміст лекції, а не особисті дані користувача. Обліковий запис Google, адреса
+пошти та ідентифікатор Telegram цим постачальникам не передаються.
+</p>
+
+<h2>Строки зберігання</h2>
+<ul>
+  <li>Документи на Диску зберігаються, доки користувач їх сам не видалить.</li>
+  <li>Тимчасові файли обробки на сервері видаляються автоматично протягом кількох діб.</li>
+  <li>Транскрипти зберігаються, доки користувач не попросить їх видалити.</li>
+</ul>
+
+<h2>Як відкликати доступ і видалити дані</h2>
+<ul>
+  <li>Відкликати доступ до Диска можна будь-коли на сторінці
+      <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+  <li>Щоб видалити дані з сервера, надішліть запит на пошту нижче. Дані видаляються протягом семи днів.</li>
+  <li>Документи на власному Диску користувач видаляє самостійно.</li>
+</ul>
+
+<h2>Зміни</h2>
+<p>
+Якщо політика зміниться, оновлена редакція буде опублікована на цій самій сторінці із новою
+датою вгорі.
+</p>
+
+<h2>Контакт</h2>
+<p><a href="mailto:vkostovskiy1@gmail.com">vkostovskiy1@gmail.com</a></p>
+
+<hr>
+
+<h2>In English (summary)</h2>
+<p>
+lecture-bot is a private, non-commercial study tool used by its author and a few classmates.
+It processes lecture recordings, photos of slides and lecture files in order to produce study
+documents. It requests a single Google scope, <code>drive.file</code>, which grants access only
+to files and folders the app itself creates; it cannot read any other file in the user's Drive
+and never deletes user files. Data obtained through Google APIs is used solely to create and
+update those documents, is not sold, is not used for advertising, and is not used to train AI
+models. Lecture content is sent to speech-recognition and language-model providers (Google
+Gemini, Anthropic, DeepInfra, Groq) for processing; Google account identity is not sent to them.
+Access can be revoked at any time at
+<a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. To have
+server-side data deleted, write to <a href="mailto:vkostovskiy1@gmail.com">vkostovskiy1@gmail.com</a>.
+</p>
+
+<footer>Оновлено 10 вересня 2026 року. <a href="index.html">На головну</a></footer>
+
+</body>
+</html>

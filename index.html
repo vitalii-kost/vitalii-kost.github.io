@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лекція → три документи</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+         font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; }
+  .lead { color: #666; margin-top: 0; }
+  ul { padding-left: 1.2rem; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #666; }
+  a { color: #0a58ca; }
+  @media (prefers-color-scheme: dark) { .lead, footer { color: #9aa0a6; } a { color: #8ab4f8; } }
+</style>
+</head>
+<body>
+
+<h1>Лекція → три документи</h1>
+<p class="lead">Навчальний Telegram-бот для студентів-психологів. Приватний проєкт, не комерційний сервіс.</p>
+
+<h2>Що робить застосунок</h2>
+<p>
+Студент надсилає боту запис лекції або файл із текстом лекції. Бот розпізнає мовлення,
+перевіряє терміни за словником предмета і створює на Google Диску студента три документи:
+транскрипцію лекції, витяг найважливішого «під запис» і пояснювальний конспект із
+питаннями для самоперевірки. Додатково бот формує картки для повторення та словник термінів.
+</p>
+
+<h2>Хто ним користується</h2>
+<p>
+Це особистий інструмент автора та кількох одногрупників. Реєстрації немає, доступ лише за
+списком дозволених облікових записів Telegram. Застосунок не продається і не має платних
+тарифів.
+</p>
+
+<h2>Як використовується Google Диск</h2>
+<p>
+Застосунок запитує єдиний дозвіл
+<code>https://www.googleapis.com/auth/drive.file</code>. Це означає доступ виключно до тих
+файлів і папок, які створив сам застосунок. Він не бачить і не може відкрити решту файлів
+на Диску користувача.
+</p>
+<ul>
+  <li>створює папку предмета і папку лекції;</li>
+  <li>створює в них документи Google Docs із результатами обробки;</li>
+  <li>оновлює ці документи, коли конспект перегенеровано;</li>
+  <li>складає покажчик лекцій предмета.</li>
+</ul>
+
+<h2>Документи</h2>
+<ul>
+  <li><a href="privacy.html">Політика конфіденційності</a></li>
+</ul>
+
+<h2>Контакт</h2>
+<p>Питання щодо застосунку: <a href="mailto:vkostovskiy1@gmail.com">vkostovskiy1@gmail.com</a></p>
+
+<hr>
+
+<h2>In English</h2>
+<p>
+<strong>Lecture → three documents</strong> is a personal, non-commercial Telegram bot that turns a
+university lecture recording or lecture file into three Google Docs: a transcript, a summary of the
+key points, and an explanatory study guide with self-check questions. It is used by the author and
+a few classmates only; there is no public sign-up.
+</p>
+<p>
+The app requests a single Google scope, <code>drive.file</code>, which grants access only to files
+and folders the app itself creates. It cannot see any other file in the user's Drive. See the
+<a href="privacy.html">privacy policy</a> for details. Contact:
+<a href="mailto:vkostovskiy1@gmail.com">vkostovskiy1@gmail.com</a>.
+</p>
+
+<footer>Оновлено 10 вересня 2026 року.</footer>
+
+</body>
+</html>
